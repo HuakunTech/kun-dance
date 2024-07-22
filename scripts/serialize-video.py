@@ -17,7 +17,7 @@ parser.add_argument("--end_time", type=int, help="End time in seconds")
 args = parser.parse_args()
 
 
-target_width = 60
+target_width = 100
 src_fps = 30
 target_fps = 15
 

@@ -33,7 +33,7 @@ function decompressFrame(compressedFrame: string): string {
 
 function Cell({ value }: { value: number }) {
   return (
-    <div className={`w-4 h-4 ${value === 0 ? "bg-white dark:bg-inherit" : "bg-black dark:bg-white"}`}></div>
+    <div className={`w-2 h-2 ${value === 0 ? "bg-white dark:bg-inherit" : "bg-black dark:bg-white"}`}></div>
   );
 }
 
