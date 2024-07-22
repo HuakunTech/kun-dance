@@ -31,7 +31,7 @@ function decompressFrame(compressedFrame: string): string {
   return decompressed.join("");
 }
 
-export function Cell({ value }: { value: number }) {
+function Cell({ value }: { value: number }) {
   return (
     <div
       className={`w-4 h-4 ${
@@ -41,7 +41,7 @@ export function Cell({ value }: { value: number }) {
   );
 }
 
-export function Row({ cells }: { cells: number[] }) {
+function Row({ cells }: { cells: number[] }) {
   return (
     <div className="flex">
       {cells.map((cell, i) => (
