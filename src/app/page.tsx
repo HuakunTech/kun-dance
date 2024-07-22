@@ -33,11 +33,7 @@ function decompressFrame(compressedFrame: string): string {
 
 function Cell({ value }: { value: number }) {
   return (
-    <div
-      className={`w-4 h-4 ${
-        value === 0 ? "bg-white" : "bg-black"
-      } border border-black`}
-    ></div>
+    <div className={`w-4 h-4 ${value === 0 ? "bg-white dark:bg-inherit" : "bg-black dark:bg-white"}`}></div>
   );
 }
 
@@ -113,12 +109,11 @@ export default function Home() {
 
   return (
     <main className="flex justify-center items-center h-full">
-      <Button>hello</Button>
-      {/* <div>
+      <div>
         {frame?.map((row, i) => (
           <Row key={i} cells={row} />
         ))}
-      </div> */}
+      </div>
     </main>
   );
 }
