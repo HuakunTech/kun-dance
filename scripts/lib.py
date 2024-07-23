@@ -12,7 +12,7 @@ def serialize_frame(frame: np.ndarray) -> str:
 def deserialize_frame(frame_str: str) -> np.ndarray:
     # convert string to 2D array. "o" is 0, "l" is 255. each line is separated by '\n'
     return np.array(
-        [[0 if char == "o" else 255 for char in row] for row in frame_str.split("\n")]
+        [[0 if char == "o" else 1 for char in row] for row in frame_str.split("\n")]
     )
 
 
