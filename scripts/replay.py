@@ -6,10 +6,12 @@ import argparse
 from lib import decompress_frame, deserialize_frame
 
 # read from ./frames.json and parse
+fps = 10
 with open("./frames.json", "r") as f:
-    raw_frames = [decompress_frame(frame) for frame in json.load(f)]
+    raw_data = json.load(f)
+    fps = raw_data['fps']
+    raw_frames = [decompress_frame(frame) for frame in raw_data['frames']]
 
-fps = 15
 
 # print to terminal
 frames = []

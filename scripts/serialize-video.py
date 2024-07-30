@@ -17,7 +17,7 @@ parser.add_argument("--end_time", type=int, help="End time in seconds")
 args = parser.parse_args()
 
 
-target_width = 100
+target_width = 80
 src_fps = 30
 target_fps = 15
 
@@ -53,4 +53,10 @@ frames = read_video(file_path, start_time, end_time, target_width, target_fps)
 
 
 with open("frames.json", "w") as f:
-    json.dump([compress_frame(serialize_frame(frame)) for frame in frames], f)
+    json.dump(
+        {
+            "fps": target_fps,
+            "frames": [compress_frame(serialize_frame(frame)) for frame in frames],
+        },
+        f,
+    )

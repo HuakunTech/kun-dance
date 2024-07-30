@@ -33,7 +33,11 @@ function decompressFrame(compressedFrame: string): string {
 
 function Cell({ value }: { value: number }) {
   return (
-    <div className={`w-2 h-2 ${value === 0 ? "bg-white dark:bg-inherit" : "bg-black dark:bg-white"}`}></div>
+    <div
+      className={`w-2 h-2 ${
+        value === 0 ? "bg-white dark:bg-inherit" : "bg-black dark:bg-white"
+      }`}
+    ></div>
   );
 }
 
@@ -89,8 +93,9 @@ export default function Home() {
   );
 
   useEffect(() => {
-    getData().then((data) => {
-      setRawFrames(data);
+    getData().then((data: { fps: number; frames: string[] }) => {
+      setFps(data.fps);
+      setRawFrames(data.frames);
     });
   }, []);
 
